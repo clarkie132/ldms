@@ -1,9 +1,7 @@
 package com.ldms.demo.amortisation;
 
-import com.ldms.demo.util.NumberUtil;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +9,6 @@ import static com.ldms.demo.util.NumberUtil.round;
 
 @Service
 public class AmortisationScheduleService {
-    private static final BigDecimal MONTHS_IN_YEAR = new BigDecimal("12");
 
     private final InstallmentCalculator installmentCalculator;
 
