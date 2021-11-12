@@ -13,7 +13,7 @@ class InstallmentCalculatorTest {
         LoanDetails loanDetails = new LoanDetails();
         loanDetails.setAssetCost(20000 );
         loanDetails.setInterestRate(7.5);
-        loanDetails.setBalloonPayment(1000);
+        loanDetails.setBalloonPayment(0);
         loanDetails.setNumberOfMonthlyPayments(12);
         Installment installment = installmentCalculator.calculateInstallment(loanDetails);
         assertEquals(0.00625, installment.getInterestRate());

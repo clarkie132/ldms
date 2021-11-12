@@ -15,7 +15,7 @@ public class InstallmentCalculator {
         double r = loanDetails.getInterestRate() / MONTHS_IN_YEAR / PERCENTAGE_AS_DECIMAL;
         int n = loanDetails.getNumberOfMonthlyPayments();
         double monthlyRepayment;
-        if(loanDetails.getBalloonPayment() != 0) {
+        if(loanDetails.getBalloonPayment() == 0) {
             monthlyRepayment = P * ((r * Math.pow((1 + r), n)) / (Math.pow((1 + r), n) - 1));
         } else {
             double B = loanDetails.getBalloonPayment();
