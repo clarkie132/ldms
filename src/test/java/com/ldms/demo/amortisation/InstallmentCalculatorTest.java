@@ -11,13 +11,13 @@ class InstallmentCalculatorTest {
     void calculateInstallment() {
         InstallmentCalculator installmentCalculator = new InstallmentCalculator();
         LoanDetails loanDetails = new LoanDetails();
-        loanDetails.setAssetCost(20000 );
+        loanDetails.setAssetCost(25000 );
+        loanDetails.setDeposit(5000);
         loanDetails.setInterestRate(7.5);
-        loanDetails.setBalloonPayment(0);
-        loanDetails.setNumberOfMonthlyPayments(12);
+        loanDetails.setNumberOfMonthlyPayments(60);
         Installment installment = installmentCalculator.calculateInstallment(loanDetails);
         assertEquals(0.00625, installment.getInterestRate());
-        assertEquals(1735.15, installment.getAmount());
+        assertEquals(400.76, installment.getAmount());
 
     }
 }
