@@ -24,9 +24,7 @@ public class DemoApplication {
 	public void init() {
 		LoanDetails loanDetails = new LoanDetails();
 		loanDetails.setAssetCost(20000 );
-		loanDetails.setDeposit(5000);
 		loanDetails.setInterestRate(7.5);
-		loanDetails.setBalloonPayment(1000);
 		loanDetails.setNumberOfMonthlyPayments(12);
 
 		loanDetailsRepository.save(loanDetails);

@@ -24,7 +24,7 @@ public class AmortisationScheduleService {
         entry.setPayment(round(installment.getAmount()));
         entry.setInterest(round(installment.getInterestRate() * loanDetails.getAssetCost()));
         entry.setPrincipal(round(installment.getAmount() - entry.getInterest()));
-        entry.setBalance(round(loanDetails.getAssetCost() - entry.getPrincipal()));
+        entry.setBalance(round(loanDetails.getAssetCost() - entry.getPrincipal() - loanDetails.getDeposit()));
         scheduleEntries.add(entry);
         for (int i = 1; i <= loanDetails.getNumberOfMonthlyPayments()-1; i ++ ) {
             AmortisationScheduleEntry newEntry = new AmortisationScheduleEntry();
@@ -32,7 +32,7 @@ public class AmortisationScheduleService {
             newEntry.setPayment(round(installment.getAmount()));
             newEntry.setInterest(round(installment.getInterestRate() * entry.getBalance()));
             newEntry.setPrincipal(round(installment.getAmount() - newEntry.getInterest()));
-            newEntry.setBalance(round(entry.getBalance() - newEntry.getPrincipal()));
+            newEntry.setBalance(round(entry.getBalance() - entry.getPayment() + newEntry.getInterest()));
             scheduleEntries.add(newEntry);
             entry = newEntry;
         }
