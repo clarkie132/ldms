@@ -20,4 +20,19 @@ class InstallmentCalculatorTest {
         assertEquals(400.76, installment.getAmount());
 
     }
+
+    @Test
+    void calculateInstallmentWithBalloon() {
+        InstallmentCalculator installmentCalculator = new InstallmentCalculator();
+        LoanDetails loanDetails = new LoanDetails();
+        loanDetails.setAssetCost(25000 );
+        loanDetails.setDeposit(5000);
+        loanDetails.setInterestRate(7.5);
+        loanDetails.setNumberOfMonthlyPayments(60);
+        loanDetails.setBalloonPayment(10000);
+        Installment installment = installmentCalculator.calculateInstallment(loanDetails);
+        assertEquals(0.00625, installment.getInterestRate());
+        assertEquals(262.88, installment.getAmount());
+
+    }
 }
