@@ -8,6 +8,8 @@ To run, build the project using maven and then run as a Java application
 
 as a java application or run the spring-boot:start maven target
 
+Note I am using Lombok so an IDE will need the Lombok plugin
+
 The application starts on the default 8080 port. I construct a demonstration LoanDetails as part of startup and this should
 be discoverable from the entry link  (http://localhost:8080/ - which will take you to http://localhost:8080/loanDetails)
 
