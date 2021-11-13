@@ -19,6 +19,6 @@ sample post
 
 ##Thoughts
 
-1. obviously I wouldn't use doubles a monetary type
+1. obviously I wouldn't use doubles as a monetary type in a production application
 2. rounding needs tidying up, amounts end up being out by a penny
 3. really interesting design decisions to take. I considered inheritence for the two types of amortisation schedules but decided against it, the jury is still out  
