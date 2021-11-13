@@ -17,7 +17,7 @@ sample post
 
 ` curl -X POST http://localhost:8080/loanDetails -H "Content-Type:application/json" -d "{\"numberOfMonthlyPayments\":12,\"assetCost\":20000.0,\"deposit\":5000.0,\"interestRate\":7.5,\"balloonPayment\":0.0}"`
 
-##Thoughts
+## Thoughts
 
 1. obviously I wouldn't use doubles as a monetary type in a production application
 2. rounding needs tidying up, amounts end up being out by a penny
